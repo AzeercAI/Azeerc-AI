@@ -101,7 +101,7 @@ graph TD
     class T,U,V,W,X observability;
 ```
 
-## System Requirements <a name=“system-requirements”></a>
+## System Requirements <a name="system-requirements"></a>
 ### Minimum Production Deployment
 
 | component | Specification | Notes |
@@ -117,7 +117,7 @@ graph TD
 - On-Prem: VMware vSphere 8.0+, OpenStack Yoga+
 - Edge: K3s (ARM64/x86-64), AWS Snow Family
 
-## Installation Guide <a name=“installation-guide”></a>
+## Installation Guide <a name="installation-guide"></a>
 ### Prerequisites
 ```
 # Install base dependencies
@@ -149,7 +149,7 @@ make start-cluster MODE=development
 azcli workload apply -f samples/text-processing.yaml
 ```
 
-## Configuration Reference <a name=“configuration-reference”></a>
+## Configuration Reference <a name="configuration-reference"></a>
 ### Core Configuration Files
 
 | File | Purpose | Example Snippet |
@@ -166,7 +166,7 @@ azcli workload apply -f samples/text-processing.yaml
 | **AZEERC_CRYPTO_MODE** | NO | fips140-3 | Cryptographic compliance level |
 | **AZEERC_BACKEND** | YES | kubernetes | Orchestration platform |
 
-## Deployment Options <a name=“deployment-options”></a>
+## Deployment Options <a name="deployment-options"></a>
 ### Kubernetes (Production)
 
 ```
@@ -213,7 +213,7 @@ configs:
     file: ./config/local/config.yaml
 ```
 
-## Security Model <a name=“security-model”></a>
+## Security Model <a name="security-model"></a>
 ### Key Security Features
 #### Hardware-Rooted Trust
 - TPM 2.0 integration for agent identity
@@ -234,7 +234,7 @@ azcli enclave create --enclave-type=sgx --memory=512m --threads=4
 openssl engine -t -c -vvvv -pre SO_PATH:/usr/lib/openssl/engines-3/azeerc-fips.so
 ```
 
-## Monitoring & Observability <a name=“monitoring-observability”></a>
+## Monitoring & Observability <a name="monitoring-observability"></a>
 ### Key Metrics
 
 | Metric | Type | Description | Alert Threshold |
@@ -250,7 +250,7 @@ openssl engine -t -c -vvvv -pre SO_PATH:/usr/lib/openssl/engines-3/azeerc-fips.s
                    └--> [S3 Archive] (IRETENTION=365d)
 ```
 
-## Performance Benchmarks <a name=“performance-benchmarks”></a>
+## Performance Benchmarks <a name="performance-benchmarks"></a>
 ### Throughput Tests (v3.4)
 
 | Scenario | Nodes | TPS | Latency (p99) | Error Rate |
@@ -259,7 +259,7 @@ openssl engine -t -c -vvvv -pre SO_PATH:/usr/lib/openssl/engines-3/azeerc-fips.s
 | **Image Analysis** | 5+3 GPU | 8,200 | 120ms | 0.12% |
 | **Hybrid Workload** | 20 | 9,800 | >10k | 150ms | 0.08% |
 
-## Contributing Guidelines <a name=“contributing-guidelines”></a>
+## Contributing Guidelines <a name="contributing-guidelines"></a>
 ### Development Workflow
 
 #### Fork & Clone
@@ -277,7 +277,7 @@ git commit -m "feat(security): add SGX attestation layer [AZ-1138]"
 - Performance regression tests
 - Fuzz testing for critical paths
 
-## License & Compliance <a name=“license-compliance”></a>
+## License & Compliance <a name="license-compliance"></a>
 ### License: Apache 2.0 with Commons Clause
 #### Certifications:
 
